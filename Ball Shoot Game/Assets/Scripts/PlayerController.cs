@@ -6,8 +6,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
     public float speed;
-
-	// Use this for initialization
+    
 	void Start () {
 		
 	}
@@ -17,11 +16,26 @@ public class PlayerController : MonoBehaviour {
         movePlayer();
 	}
 
+    // moves the player
     private void movePlayer() {
+        float moveHorizontal;
+        float moveVertical;
+        if (gameObject.tag == "Player 1") {
+            moveHorizontal = Input.GetAxis("Horizontal-Player-1");
+            moveVertical = Input.GetAxis("Vertical-Player-1");
+        } else {
+            moveHorizontal = Input.GetAxis("Horizontal-Player-2");
+            moveVertical = Input.GetAxis("Vertical-Player-2");
+        }
 
+        Vector3 direction = new Vector3(moveHorizontal, moveVertical, 0f).normalized;
+        transform.Translate(direction * speed * Time.deltaTime);
+    }
+    
 
-        //Vector3 direction = new Vector3(h, v, 0f).normalized;
-
-        //transform.Translate(direction * speed * Time.deltaTime);
+    private void OnTriggerEnter2D(Collider2D coll) {
+        if (coll.gameObject.tag == "Line") {
+            print("problem");
+        }
     }
 }
