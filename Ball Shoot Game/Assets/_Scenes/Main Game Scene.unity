@@ -674,36 +674,6 @@ Prefab:
       propertyPath: m_Name
       value: Player 1
       objectReference: {fileID: 0}
-    - target: {fileID: 50223745153723378, guid: 2a20d237e0ea47940a26b13dcda8e183,
-        type: 2}
-      propertyPath: m_UseFullKinematicContacts
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 50223745153723378, guid: 2a20d237e0ea47940a26b13dcda8e183,
-        type: 2}
-      propertyPath: m_BodyType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 50223745153723378, guid: 2a20d237e0ea47940a26b13dcda8e183,
-        type: 2}
-      propertyPath: m_Simulated
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 50223745153723378, guid: 2a20d237e0ea47940a26b13dcda8e183,
-        type: 2}
-      propertyPath: m_UseAutoMass
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 50223745153723378, guid: 2a20d237e0ea47940a26b13dcda8e183,
-        type: 2}
-      propertyPath: m_Mass
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 50223745153723378, guid: 2a20d237e0ea47940a26b13dcda8e183,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2a20d237e0ea47940a26b13dcda8e183, type: 2}
   m_IsPrefabParent: 0
