@@ -41,11 +41,11 @@ public class PlayerController : MonoBehaviour {
         float moveHorizontal;
         float moveVertical;
         if (gameObject.tag == "Player 1") {
-            moveHorizontal = Input.GetAxis("Horizontal-Player-1");
-            moveVertical = Input.GetAxis("Vertical-Player-1");
+            moveHorizontal = Input.GetAxisRaw("Horizontal-Player-1");
+            moveVertical = Input.GetAxisRaw("Vertical-Player-1");
         } else {
-            moveHorizontal = Input.GetAxis("Horizontal-Player-2");
-            moveVertical = Input.GetAxis("Vertical-Player-2");
+            moveHorizontal = Input.GetAxisRaw("Horizontal-Player-2");
+            moveVertical = Input.GetAxisRaw("Vertical-Player-2");
         }
 
         Vector3 direction = new Vector3(moveHorizontal, moveVertical, 0f).normalized;
