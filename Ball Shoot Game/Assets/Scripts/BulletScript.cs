@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour {
+public class BulletScript : MonoBehaviour {
     
     public float bulletSpeed;
 
@@ -14,6 +14,10 @@ public class Bullet : MonoBehaviour {
 
     void Update () {
         transform.Translate(direction * bulletSpeed * Time.deltaTime);
-    } 
+    }
+
+    public Vector2 getDirection() {
+        return this.direction;
+    }
 
 }

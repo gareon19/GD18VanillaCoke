@@ -1,7 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ball Shoot Game.CSharp", "Ball Shoot Game.CSharp.csproj", "{D9F9DB9E-01E1-DEDD-33F8-9B877A5F81EA}"
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ball Shoot Game", "Assembly-CSharp.csproj", "{0195651E-CF4F-E870-08CA-89D89C89F322}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,12 +9,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D9F9DB9E-01E1-DEDD-33F8-9B877A5F81EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D9F9DB9E-01E1-DEDD-33F8-9B877A5F81EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D9F9DB9E-01E1-DEDD-33F8-9B877A5F81EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D9F9DB9E-01E1-DEDD-33F8-9B877A5F81EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0195651E-CF4F-E870-08CA-89D89C89F322}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0195651E-CF4F-E870-08CA-89D89C89F322}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0195651E-CF4F-E870-08CA-89D89C89F322}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0195651E-CF4F-E870-08CA-89D89C89F322}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal

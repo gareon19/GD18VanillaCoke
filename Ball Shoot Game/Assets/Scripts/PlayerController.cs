@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour {
     private void shootBullet(float directionX, float directionY) {
         nextBullet = Time.time + shootingRate;
         GameObject newBullet = Instantiate(bullet, bulletSpawn.transform.position, bulletSpawn.transform.rotation);
-        newBullet.GetComponent<Bullet>().setDirection(new Vector2(directionX, directionY));
+        newBullet.GetComponent<BulletScript>().setDirection(new Vector2(directionX, directionY));
     }
 
     private void checkHealth() {
