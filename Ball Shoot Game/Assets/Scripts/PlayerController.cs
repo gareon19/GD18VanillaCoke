@@ -8,14 +8,18 @@ public class PlayerController : MonoBehaviour {
     public float health;
 
     public float speed;
-    public float shootingRate;
     public GameObject bullet;
     public GameObject bulletSpawn;
-
+    
+    private float shootingRate;
+    private float reloadTime;
+    private float bulletsUntilReload;
     private float nextBullet;
+    private float bulletsFired;
+    private float waitingTime;
     
 	void Start () {
-		// :)
+        // :)
 	}
 	
 
@@ -24,6 +28,16 @@ public class PlayerController : MonoBehaviour {
         shooting();
         checkHealth();
 	}
+
+    public void setWeaponStats(float shootingRate, float reloadTime, float bulletsUntilReload) {
+        this.shootingRate = shootingRate;
+        this.reloadTime = reloadTime;
+        this.bulletsUntilReload = bulletsUntilReload;
+    }
+
+    public void setBulletSprite(Sprite sprite) {
+        bullet.GetComponent<SpriteRenderer>().sprite = sprite;
+    }
 
     public float getHealth() {
         return health;
@@ -62,9 +76,20 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void shootBullet(float directionX, float directionY) {
+        if (shootingRate == 0) {
+            return;
+        } else if (bulletsFired >= bulletsUntilReload && reloadTime > 0) {
+            waitingTime++;
+            if (waitingTime >= reloadTime) {
+                bulletsFired = 0;
+                waitingTime = 0;
+            }
+        } else {
+            bulletsFired++;
+            GameObject newBullet = Instantiate(bullet, bulletSpawn.transform.position, bulletSpawn.transform.rotation);
+            newBullet.GetComponent<BulletScript>().setDirection(new Vector2(directionX, directionY));
+        }
         nextBullet = Time.time + shootingRate;
-        GameObject newBullet = Instantiate(bullet, bulletSpawn.transform.position, bulletSpawn.transform.rotation);
-        newBullet.GetComponent<BulletScript>().setDirection(new Vector2(directionX, directionY));
     }
 
     private void checkHealth() {
