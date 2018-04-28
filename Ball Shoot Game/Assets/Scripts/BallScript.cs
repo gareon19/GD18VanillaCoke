@@ -28,7 +28,6 @@ public class BallScript : MonoBehaviour {
 
 
     void OnCollisionEnter2D(Collision2D collObj){
-        Debug.Log(collObj.gameObject.tag);
         switch (collObj.gameObject.tag) {
             case "Bullet":
                 contactPoint = collObj.contacts[0].point;

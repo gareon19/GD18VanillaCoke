@@ -10,24 +10,24 @@ public class PlayerController : MonoBehaviour {
     public float speed;
     public GameObject bullet;
     public GameObject bulletSpawn;
-    
+
     private float shootingRate;
     private float reloadTime;
     private float bulletsUntilReload;
     private float nextBullet;
     private float bulletsFired;
     private float waitingTime;
-    
-	void Start () {
-        // :)
-	}
-	
 
-	void Update () {
+    void Start() {
+        // :)
+    }
+
+
+    void Update() {
         movePlayer();
         shooting();
         checkHealth();
-	}
+    }
 
     public void setWeaponStats(float shootingRate, float reloadTime, float bulletsUntilReload) {
         this.shootingRate = shootingRate;
@@ -43,10 +43,22 @@ public class PlayerController : MonoBehaviour {
         return health;
     }
 
+    public void takeDamage(int damage)
+    {
+        health -= damage;
+    }
     void OnCollisionEnter2D(Collision2D coll) {
-        if (coll.gameObject.tag == "Bullet") {
-            Destroy(coll.gameObject);
-            health -= 20;
+        switch (coll.gameObject.tag)
+        {
+            case "Bullet":
+                Destroy(coll.gameObject);
+                health -= 20;
+                break;
+            case "Ball":
+                health -= 20;
+                break;
+            default:
+                break;
         }
     }
 
