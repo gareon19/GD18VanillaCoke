@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class BallScript : MonoBehaviour {
 
-    private Vector2 direction;
+    private Vector2 collDirection;
     public float ballSpeed;
     private Collider2D ballCollider;
     public GameObject[] ignoreCollision;
     public Rigidbody2D rigidBody;
+    public Vector2 contactPoint;
+    public Vector2 ballPosition;
 
     void Start () {
-        direction = new Vector2(0, 0);
         rigidBody = GetComponent<Rigidbody2D>();
         ballCollider = GetComponent<CircleCollider2D>();
         // Todo: add checks / other collision components
@@ -30,9 +31,12 @@ public class BallScript : MonoBehaviour {
         Debug.Log(collObj.gameObject.tag);
         switch (collObj.gameObject.tag) {
             case "Bullet":
-                // Todo: check if normalized is needed 
-                direction = collObj.gameObject.GetComponent<BulletScript>().getDirection().normalized;
-                rigidBody.velocity = (direction * ballSpeed);
+                contactPoint = collObj.contacts[0].point;
+                ballPosition.x = this.transform.position.x;
+                ballPosition.y = this.transform.position.y;
+                collDirection = ballPosition - contactPoint;
+                collDirection.Normalize();
+                rigidBody.velocity = (collDirection * ballSpeed);
                 Destroy(collObj.gameObject);
                 break;
             default:
