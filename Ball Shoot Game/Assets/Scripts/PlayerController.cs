@@ -2,10 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
     public float health;
+    public int scoreValue;
 
     public float speed;
     public GameObject bullet;
@@ -19,7 +21,6 @@ public class PlayerController : MonoBehaviour {
     private float waitingTime;
 
     void Start() {
-        // :)
     }
 
 
@@ -41,6 +42,17 @@ public class PlayerController : MonoBehaviour {
 
     public float getHealth() {
         return health;
+    }
+
+    public int getScoreValue() {
+        if (gameObject.tag == "Player 1")
+        {
+            return PlayerPrefs.GetInt("Player1 Score");
+        }
+        else
+        {
+            return PlayerPrefs.GetInt("Player2 Score");
+        }
     }
 
     public void takeDamage(int damage)
@@ -106,7 +118,17 @@ public class PlayerController : MonoBehaviour {
 
     private void checkHealth() {
         if (health <= 0) {
-            Destroy(gameObject);
+            //PlayerController otherPlayer = (PlayerController)FindObjectOfType(typeof(PlayerController));
+            //otherPlayer.scoreValue += 1;
+            if (gameObject.tag == "Player 1")
+            {
+                PlayerPrefs.SetInt("Player2 Score", PlayerPrefs.GetInt("Player2 Score")+1);
+            }
+            else
+            {
+                PlayerPrefs.SetInt("Player1 Score", PlayerPrefs.GetInt("Player2 Score") + 1);
+            }
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 
