@@ -14,9 +14,11 @@ public class PlayerController : MonoBehaviour {
     private float shootingRate;
     private float reloadTime;
     private float bulletsUntilReload;
+    private float[] bulletsShotsAtOnceWithAngle;
+
     private float nextBullet;
     private float bulletsFired;
-    private float waitingTime;
+    private bool reloading = false;
 
     void Start() {
         // :)
@@ -29,10 +31,11 @@ public class PlayerController : MonoBehaviour {
         checkHealth();
     }
 
-    public void setWeaponStats(float shootingRate, float reloadTime, float bulletsUntilReload) {
+    public void setWeaponStats(float shootingRate, float reloadTime, float bulletsUntilReload, float[] bulletsShotsAtOnceWithAngle) {
         this.shootingRate = shootingRate;
         this.reloadTime = reloadTime;
         this.bulletsUntilReload = bulletsUntilReload;
+        this.bulletsShotsAtOnceWithAngle = bulletsShotsAtOnceWithAngle;
     }
 
     public void setBulletSprite(Sprite sprite) {
@@ -43,13 +46,11 @@ public class PlayerController : MonoBehaviour {
         return health;
     }
 
-    public void takeDamage(int damage)
-    {
+    public void takeDamage(int damage) {
         health -= damage;
     }
     void OnCollisionEnter2D(Collision2D coll) {
-        switch (coll.gameObject.tag)
-        {
+        switch (coll.gameObject.tag) {
             case "Bullet":
                 Destroy(coll.gameObject);
                 health -= 20;
@@ -81,27 +82,45 @@ public class PlayerController : MonoBehaviour {
     // shoots bullets
     private void shooting() {
         if (gameObject.tag == "Player 1" && Input.GetButton("Fire1-Player-1") && Time.time > nextBullet) {
-            shootBullet(1f, 0f);
+            shootBullets(true);
         } else if (gameObject.tag == "Player 2" && Input.GetButton("Fire1-Player-2") && Time.time > nextBullet) {
-            shootBullet(-1f, 0f);
+            shootBullets(false);
         }
     }
 
-    private void shootBullet(float directionX, float directionY) {
+    private void shootBullets(bool shootRight) {
         if (shootingRate == 0) {
             return;
-        } else if (bulletsFired >= bulletsUntilReload && reloadTime > 0) {
-            waitingTime++;
-            if (waitingTime >= reloadTime) {
-                bulletsFired = 0;
-                waitingTime = 0;
+        }
+        for (int i = 0; i< bulletsShotsAtOnceWithAngle.Length; i++) {
+            Vector2 direction;
+            // adapt bullet angle
+            if (shootRight) {
+                direction = Quaternion.AngleAxis(bulletsShotsAtOnceWithAngle[i], Vector3.forward) * Vector2.right;
+            } else {
+                direction = Quaternion.AngleAxis(bulletsShotsAtOnceWithAngle[i], Vector3.forward) * Vector2.left;
             }
-        } else {
+            shootBullet(direction);
+        }
+    }
+
+    private void shootBullet(Vector2 direction) {
+        if (!reloading) {
             bulletsFired++;
             GameObject newBullet = Instantiate(bullet, bulletSpawn.transform.position, bulletSpawn.transform.rotation);
-            newBullet.GetComponent<BulletScript>().setDirection(new Vector2(directionX, directionY));
+            newBullet.GetComponent<BulletScript>().setDirection(direction);
+            nextBullet = Time.time + shootingRate;
+            if (bulletsFired >= bulletsUntilReload && !reloading) {
+                StartCoroutine(reload());
+            }
         }
-        nextBullet = Time.time + shootingRate;
+    }
+
+    IEnumerator reload() {
+        reloading = true;
+        yield return new WaitForSeconds(reloadTime);
+        reloading = false;
+        bulletsFired = 0;
     }
 
     private void checkHealth() {
