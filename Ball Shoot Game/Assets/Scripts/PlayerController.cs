@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour {
     private float nextBullet;
     private float bulletsFired;
     private bool reloading = false;
+
 
     void Start() {
         // :)
@@ -44,6 +46,15 @@ public class PlayerController : MonoBehaviour {
 
     public float getHealth() {
         return health;
+    }
+
+    public int getScoreValue() {
+        if (gameObject.tag == "Player 1")
+        {
+            return PlayerPrefs.GetInt("Player 1 Score");
+        } else {
+            return PlayerPrefs.GetInt("Player 2 Score");
+        }
     }
 
     public void takeDamage(int damage) {
@@ -125,7 +136,31 @@ public class PlayerController : MonoBehaviour {
 
     private void checkHealth() {
         if (health <= 0) {
-            Destroy(gameObject);
+            if (gameObject.tag == "Player 1")
+            {
+                PlayerPrefs.SetInt("Player 2 Score", (PlayerPrefs.GetInt("Player 2 Score") + 1));
+            } else {
+                PlayerPrefs.SetInt("Player 1 Score", (PlayerPrefs.GetInt("Player 1 Score") + 1));
+            }
+            checkPlayerVictory();
+        }
+    }
+
+    private void checkPlayerVictory() {
+        if (PlayerPrefs.GetInt("Player 1 Score") >= 3) {
+
+            // Player 1 won
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        } else if (PlayerPrefs.GetInt("Player 2 Score") >= 3) {
+
+            // Player 2 won
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        } else {
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
         }
     }
 

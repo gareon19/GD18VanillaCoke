@@ -7,6 +7,9 @@ public class MainMenu : MonoBehaviour {
 
     public void PlayGame()
     {
+        // reset PlayerPrefs (scores)
+        PlayerPrefs.DeleteAll();
+
         // loads the next scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
