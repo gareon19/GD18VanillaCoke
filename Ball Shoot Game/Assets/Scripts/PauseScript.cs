@@ -39,8 +39,8 @@ public class PauseScript : MonoBehaviour {
         GameIsPaused = false;
     }
 
-    public void showVictory(string winner) {
-        victoryText.text = winner + " WON!";
+    public void showVictory(string winnerText) {
+        victoryText.text = winnerText;
         victoryMenuUI.SetActive(true);
         Time.timeScale = 0f;
     }

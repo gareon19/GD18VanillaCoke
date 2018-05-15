@@ -154,17 +154,24 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void checkPlayerVictory() {
-        if (PlayerPrefs.GetInt("Player 1 Score") >= 3) {
+        bool player1Won = PlayerPrefs.GetInt("Player 1 Score") >= 3;
+        bool player2Won = PlayerPrefs.GetInt("Player 2 Score") >= 3;
+
+        if (player1Won && player2Won) {
+            // draw
+            victory = true;
+            mainCanvas.GetComponent<PauseScript>().showVictory("DRAW!");
+        } else if (player1Won) {
 
             // Player 1 won
             victory = true;
-            mainCanvas.GetComponent<PauseScript>().showVictory("PLAYER 1");
+            mainCanvas.GetComponent<PauseScript>().showVictory("PLAYER 1 WON!");
 
-        } else if (PlayerPrefs.GetInt("Player 2 Score") >= 3) {
+        } else if (player2Won) {
 
             // Player 2 won
             victory = true;
-            mainCanvas.GetComponent<PauseScript>().showVictory("PLAYER 2");
+            mainCanvas.GetComponent<PauseScript>().showVictory("PLAYER 2 WON!");
 
         } else {
 
