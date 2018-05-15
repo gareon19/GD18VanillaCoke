@@ -1,17 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PauseMenu : MonoBehaviour {
+public class PauseScript : MonoBehaviour {
 
     public static bool GameIsPaused = false;
 
     public GameObject pauseMenuUI;
-	
-	// Update is called once per frame
-	void Update () {
-        if (Input.GetKeyDown(KeyCode.Escape)) {
+    public GameObject victoryMenuUI;
+    public TextMeshProUGUI victoryText;
+
+    // Update is called once per frame
+    void Update () {
+        if (Input.GetKeyDown(KeyCode.Escape) && !victoryMenuUI.activeSelf) {
             if (GameIsPaused)
             {
                 Resume();
@@ -36,9 +39,28 @@ public class PauseMenu : MonoBehaviour {
         GameIsPaused = false;
     }
 
-    
+    public void showVictory(string winner) {
+        victoryText.text = winner + " WON!";
+        victoryMenuUI.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void Restart()
+    {
+        victoryMenuUI.SetActive(false);
+
+        // reset PlayerPrefs (scores)
+        PlayerPrefs.DeleteAll();
+
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
     public void QuitGame()
     {
+        // reset PlayerPrefs (scores)
+        PlayerPrefs.DeleteAll();
+
         Time.timeScale = 1f;
         GameIsPaused = false;
         // hardcoded for now

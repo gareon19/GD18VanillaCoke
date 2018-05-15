@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour {
     public GameObject bullet;
     public GameObject bulletSpawn;
 
+    public GameObject mainCanvas;
+
     private float shootingRate;
     private float reloadTime;
     private float bulletsUntilReload;
@@ -21,6 +23,8 @@ public class PlayerController : MonoBehaviour {
     private float bulletsFired;
     private bool reloading = false;
 
+    private bool victory = false;
+
 
     void Start() {
         // :)
@@ -28,9 +32,12 @@ public class PlayerController : MonoBehaviour {
 
 
     void Update() {
-        movePlayer();
-        shooting();
-        checkHealth();
+        // there might be a more efficient way
+        if (!victory) {
+            movePlayer();
+            shooting();
+            checkHealth();
+        }
     }
 
     public void setWeaponStats(float shootingRate, float reloadTime, float bulletsUntilReload, float[] bulletsShotsAtOnceWithAngle) {
@@ -150,12 +157,14 @@ public class PlayerController : MonoBehaviour {
         if (PlayerPrefs.GetInt("Player 1 Score") >= 3) {
 
             // Player 1 won
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            victory = true;
+            mainCanvas.GetComponent<PauseScript>().showVictory("PLAYER 1");
 
         } else if (PlayerPrefs.GetInt("Player 2 Score") >= 3) {
 
             // Player 2 won
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            victory = true;
+            mainCanvas.GetComponent<PauseScript>().showVictory("PLAYER 2");
 
         } else {
 
