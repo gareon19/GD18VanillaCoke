@@ -47,8 +47,10 @@ public class PlayerController : MonoBehaviour {
         this.bulletsShotsAtOnceWithAngle = bulletsShotsAtOnceWithAngle;
     }
 
-    public void setBulletSprite(Sprite sprite) {
+    public void setBulletSpriteAndScale(Sprite sprite, Vector2 bulletScale) {
         bullet.GetComponent<SpriteRenderer>().sprite = sprite;
+        bullet.transform.localScale = new Vector2(bulletScale.x * gameObject.transform.localScale.x,
+                                                  bulletScale.y * gameObject.transform.localScale.y);
     }
 
     public float getHealth() {
@@ -143,8 +145,7 @@ public class PlayerController : MonoBehaviour {
 
     private void checkHealth() {
         if (health <= 0) {
-            if (gameObject.tag == "Player 1")
-            {
+            if (gameObject.tag == "Player 1") {
                 PlayerPrefs.SetInt("Player 2 Score", (PlayerPrefs.GetInt("Player 2 Score") + 1));
             } else {
                 PlayerPrefs.SetInt("Player 1 Score", (PlayerPrefs.GetInt("Player 1 Score") + 1));

@@ -11,9 +11,15 @@ public class WeaponScript : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D coll) {
         if (coll.gameObject.tag == "Player 1" || coll.gameObject.tag == "Player 2") {
+            // change weapon sprite, scale and stats
             coll.gameObject.transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = gameObject.GetComponent<SpriteRenderer>().sprite;
+            coll.gameObject.transform.GetChild(1).transform.localScale = new Vector2(gameObject.transform.localScale.x / coll.gameObject.transform.localScale.x,
+                                                                                     gameObject.transform.localScale.y / coll.gameObject.transform.localScale.y);
             coll.gameObject.GetComponent<PlayerController>().setWeaponStats(shootingRate, reloadTime, bulletsUntilReload, bulletsShotsAtOnceWithAngle);
-            coll.gameObject.GetComponent<PlayerController>().setBulletSprite(gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite);
+            // change bullet sprite & scale
+            coll.gameObject.GetComponent<PlayerController>().setBulletSpriteAndScale(gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite,
+                                                                                     gameObject.transform.GetChild(0).transform.localScale);
+
             Destroy(gameObject.transform.parent.gameObject);
         }
     }

@@ -21,6 +21,9 @@ public class HealthBar : MonoBehaviour {
 	void Update () {
         if (player != null) {
             health = player.GetComponent<PlayerController>().getHealth();
+            if (health < 0) {
+                health = 0;
+            }
             if (player.tag == "Player 1") {
                 scaleAndPositionBar(1f);
             } else {

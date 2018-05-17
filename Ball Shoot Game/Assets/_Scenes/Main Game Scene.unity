@@ -2020,30 +2020,15 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 1891366199902648, guid: 95c84c1d416eac94baa4aadfb3be02c3, type: 2}
-      propertyPath: m_Name
-      value: Player 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114679056804196978, guid: 95c84c1d416eac94baa4aadfb3be02c3,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114679056804196978, guid: 95c84c1d416eac94baa4aadfb3be02c3,
-        type: 2}
-      propertyPath: victoryMenuUI
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114679056804196978, guid: 95c84c1d416eac94baa4aadfb3be02c3,
-        type: 2}
-      propertyPath: victoryScreen
-      value: 
-      objectReference: {fileID: 1378226057}
     - target: {fileID: 114679056804196978, guid: 95c84c1d416eac94baa4aadfb3be02c3,
         type: 2}
       propertyPath: mainCanvas
       value: 
       objectReference: {fileID: 1378226057}
+    - target: {fileID: 1891366199902648, guid: 95c84c1d416eac94baa4aadfb3be02c3, type: 2}
+      propertyPath: m_Name
+      value: Player 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 95c84c1d416eac94baa4aadfb3be02c3, type: 2}
   m_IsPrefabParent: 0
