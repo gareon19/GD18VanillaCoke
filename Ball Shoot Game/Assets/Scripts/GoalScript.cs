@@ -13,6 +13,7 @@ public class GoalScript : MonoBehaviour {
             case "Ball":
                 PlayerController.takeDamage(40);
                 Destroy(collObj.gameObject);
+
                 break;
             default:
                 break;
