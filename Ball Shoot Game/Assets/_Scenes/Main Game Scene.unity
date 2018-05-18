@@ -1360,7 +1360,7 @@ Prefab:
     - target: {fileID: 50660827120174670, guid: a8eaded8b6abd7c4cbc5512ae52ce9f3,
         type: 2}
       propertyPath: m_Constraints
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 212536042097336440, guid: a8eaded8b6abd7c4cbc5512ae52ce9f3,
         type: 2}
