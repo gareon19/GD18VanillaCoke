@@ -1461,6 +1461,12 @@ GameObject:
   m_PrefabParentObject: {fileID: 1410456410306684, guid: 95c84c1d416eac94baa4aadfb3be02c3,
     type: 2}
   m_PrefabInternal: {fileID: 987826582}
+--- !u!114 &479347916 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114679056804196978, guid: 95c84c1d416eac94baa4aadfb3be02c3,
+    type: 2}
+  m_PrefabInternal: {fileID: 987826582}
+  m_Script: {fileID: 11500000, guid: 04cbc842e88a5934c90b3e2df0bf53c9, type: 3}
 --- !u!1 &483451382
 GameObject:
   m_ObjectHideFlags: 0
@@ -2363,7 +2369,7 @@ Prefab:
         type: 2}
       propertyPath: PlayerController
       value: 
-      objectReference: {fileID: 1378226057}
+      objectReference: {fileID: 479347916}
     - target: {fileID: 212327050206803816, guid: 95c84c1d416eac94baa4aadfb3be02c3,
         type: 2}
       propertyPath: m_Sprite
