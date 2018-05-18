@@ -1297,6 +1297,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 565110639}
     m_Modifications:
+    - target: {fileID: 114570170600610292, guid: a8eaded8b6abd7c4cbc5512ae52ce9f3,
+        type: 2}
+      propertyPath: ignoreCollision.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4727554957413048, guid: a8eaded8b6abd7c4cbc5512ae52ce9f3, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
