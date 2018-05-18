@@ -58,8 +58,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     public int getScoreValue() {
-        if (gameObject.tag == "Player 1")
-        {
+        if (gameObject.tag == "Player 1") {
             return PlayerPrefs.GetInt("Player 1 Score");
         } else {
             return PlayerPrefs.GetInt("Player 2 Score");
@@ -73,7 +72,7 @@ public class PlayerController : MonoBehaviour {
         switch (coll.gameObject.tag) {
             case "Bullet":
                 Destroy(coll.gameObject);
-                health -= 20;
+                health -= 10;
                 break;
             case "Ball":
                 health -= 20;

@@ -43,4 +43,8 @@ public class BallScript : MonoBehaviour {
         }
     }
 
+    public void setVelocity(Vector2 velocity) {
+        rigidBody.velocity = velocity;
+    }
+
 }

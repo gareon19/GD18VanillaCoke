@@ -20,4 +20,8 @@ public class BulletScript : MonoBehaviour {
         return this.direction;
     }
 
+    private void OnTriggerExit2D(Collider2D other) {
+        Destroy(gameObject);
+    }
+
 }
