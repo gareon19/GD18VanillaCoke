@@ -1,42 +1,35 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using StateHandler;
 
 public class BotController : MonoBehaviour {
-    bool gotWeapon = false;
+    public bool startTutorial = false;
     public bool startBot = false;
-    bool tutorialShot = false;
+    public bool gotWeapon = false;
+    public PlayerController player1;
+    public GameObject ball;
+    public float playerDistanceX = 1f;
+    public float ballDistanceX = 0f;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        if (!gotWeapon && startBot) {
-            pickWeapon();
-        }
-        if (gotWeapon && startBot && !tutorialShot)
-        {
-            warningShot();
-        }
-    }
+    public StateMachine<BotController> StateMachine { get; set; }
 
-    private void pickWeapon()
+    void Start()
     {
-        Vector3 direction = new Vector3(-1, 0, 0f).normalized;
-        transform.Translate(direction * 5 * Time.deltaTime);
+        StateMachine = new StateMachine<BotController>(this);
+        StateMachine.ChangeState(StateIdle.Instance);
     }
 
-    private void warningShot() {
-        GetComponent<PlayerController>().shootBullets(false);
-        tutorialShot = true;
+    void Update()
+    {
+
+        StateMachine.Update();
     }
 
     void OnCollisionEnter2D(Collision2D collObj)
     {
-        if (collObj.gameObject.tag != "Bullet") {
+        if (collObj.gameObject.tag == "Weapon")
+        {
             gotWeapon = true;
         }
     }

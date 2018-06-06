@@ -2090,6 +2090,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1981432140994858, guid: 93265565b2d99e148b27865bfb4eb4bc, type: 2}
+      propertyPath: m_TagString
+      value: Weapon
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93265565b2d99e148b27865bfb4eb4bc, type: 2}
   m_IsPrefabParent: 0
@@ -3188,7 +3192,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddb97c25d1bb11447af5a528ea9ad92f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startTutorial: 0
   startBot: 0
+  gotWeapon: 0
+  player1: {fileID: 479347916}
+  ball: {fileID: 0}
+  playerDistanceX: 1
+  ballDistanceX: 0
 --- !u!1001 &965383720
 Prefab:
   m_ObjectHideFlags: 0
@@ -3231,6 +3241,10 @@ Prefab:
     - target: {fileID: 1977229422480872, guid: b2f95bb13e7929d478f999314fbe0d9a, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1977229422480872, guid: b2f95bb13e7929d478f999314fbe0d9a, type: 2}
+      propertyPath: m_TagString
+      value: Weapon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b2f95bb13e7929d478f999314fbe0d9a, type: 2}
@@ -4266,7 +4280,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1378226057}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1706c32ea34bb14e8dd533d7b32362c, type: 3}
   m_Name: 
@@ -6570,6 +6584,10 @@ Prefab:
     - target: {fileID: 1250949661743206, guid: ba60307a97f1f6e448218bceeabf8b86, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250949661743206, guid: ba60307a97f1f6e448218bceeabf8b86, type: 2}
+      propertyPath: m_TagString
+      value: Weapon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ba60307a97f1f6e448218bceeabf8b86, type: 2}

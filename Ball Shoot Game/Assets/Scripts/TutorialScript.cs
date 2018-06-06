@@ -1,8 +1,7 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using UnityEngine.SceneManagement;
+using StateHandler;
 
 public class TutorialScript : MonoBehaviour {
 
@@ -45,6 +44,9 @@ public class TutorialScript : MonoBehaviour {
     void RemovePlayerControl() {
         player1.GetComponent<PlayerController>().canMove = false;
         player1.GetComponent<PlayerController>().canShoot = false;
+
+        player2.GetComponent<PlayerController>().canMove = false;
+        player2.GetComponent<PlayerController>().canShoot = false;
     }
 
     void StartTutorial() {
@@ -114,7 +116,7 @@ public class TutorialScript : MonoBehaviour {
         arrow_player2_hp.SetActive(false);
         weapons_player2.SetActive(true);
 
-        botController.startBot = true;
+        botController.startTutorial = true;
 
         StartCoroutine(WaitForPlayerDamage());
     }
@@ -154,9 +156,12 @@ public class TutorialScript : MonoBehaviour {
         text9.SetActive(true);
 
         // start bot behavior when ready
-        Invoke("BackToMainMenu", 3);
+        Invoke("StartBotBehavior", 3);
     }
-    void BackToMainMenu() {
-        SceneManager.LoadScene("Menu");
+    void StartBotBehavior() {
+        //player1.GetComponent<PlayerController>().canShoot = true;
+        //player1.GetComponent<PlayerController>().canMove = true;
+        SceneManager.LoadScene("Player vs Bot");
+        //botController.startBot = true;
     }
 }

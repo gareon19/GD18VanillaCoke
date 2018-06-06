@@ -25,6 +25,16 @@ public class MainMenu : MonoBehaviour {
         SceneManager.LoadScene("Tutorial");
     }
 
+    public void PlayVsBot()
+    {
+        // reset PlayerPrefs (scores)
+        PlayerPrefs.DeleteAll();
+
+        // loads the next scene
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("Player vs Bot");
+    }
+
     public void QuitGame()
     {
         // does not work in the editor

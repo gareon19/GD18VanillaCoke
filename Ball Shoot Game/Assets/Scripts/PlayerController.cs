@@ -109,15 +109,15 @@ public class PlayerController : MonoBehaviour {
 
     // shoots bullets
     private void shooting() {
-        if (gameObject.tag == "Player 1" && Input.GetButton("Fire1-Player-1") && Time.time > nextBullet) {
+        if (gameObject.tag == "Player 1" && Input.GetButton("Fire1-Player-1")) {
             shootBullets(true);
-        } else if (gameObject.tag == "Player 2" && Input.GetButton("Fire1-Player-2") && Time.time > nextBullet) {
+        } else if (gameObject.tag == "Player 2" && Input.GetButton("Fire1-Player-2")) {
             shootBullets(false);
         }
     }
 
     public void shootBullets(bool shootRight) {
-        if (shootingRate == 0) {
+        if (shootingRate == 0 || Time.time < nextBullet) {
             return;
         }
         for (int i = 0; i< bulletsShotsAtOnceWithAngle.Length; i++) {
