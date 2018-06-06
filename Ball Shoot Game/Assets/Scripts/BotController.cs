@@ -18,6 +18,9 @@ public class BotController : MonoBehaviour {
     {
         StateMachine = new StateMachine<BotController>(this);
         StateMachine.ChangeState(StateIdle.Instance);
+
+        GetComponent<PlayerController>().canMove = false;
+        GetComponent<PlayerController>().canShoot = false;
     }
 
     void Update()
