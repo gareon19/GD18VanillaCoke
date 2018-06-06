@@ -84,7 +84,7 @@ public class PlayerController : MonoBehaviour {
                 health -= 10;
                 break;
             case "Ball":
-                health -= 20;
+                health -= 10;
                 break;
             default:
                 break;

@@ -241,6 +241,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\BallScript.cs" />
+    <Compile Include="Assets\Scripts\BotController.cs" />
     <Compile Include="Assets\Scripts\BulletScript.cs" />
     <Compile Include="Assets\Scripts\GoalScript.cs" />
     <Compile Include="Assets\Scripts\HealthBar.cs" />
@@ -248,6 +249,14 @@
     <Compile Include="Assets\Scripts\PauseScript.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\ScoreScript.cs" />
+    <Compile Include="Assets\Scripts\StateIdle.cs" />
+    <Compile Include="Assets\Scripts\StateMachine.cs" />
+    <Compile Include="Assets\Scripts\StatePickWeapon.cs" />
+    <Compile Include="Assets\Scripts\StateShoot.cs" />
+    <Compile Include="Assets\Scripts\StateShootBall.cs" />
+    <Compile Include="Assets\Scripts\StateTutorial.cs" />
+    <Compile Include="Assets\Scripts\TutorialScript.cs" />
+    <Compile Include="Assets\Scripts\UnleashBotScript.cs" />
     <Compile Include="Assets\Scripts\WeaponScript.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
