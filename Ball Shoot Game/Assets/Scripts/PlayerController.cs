@@ -12,6 +12,10 @@ public class PlayerController : MonoBehaviour {
     public GameObject bullet;
     public GameObject bulletSpawn;
 
+    public bool canMove = true;
+    public bool canShoot = true;
+    public bool pickedUpWeapon = false;
+
     public GameObject mainCanvas;
 
     private float shootingRate;
@@ -34,8 +38,12 @@ public class PlayerController : MonoBehaviour {
     void Update() {
         // there might be a more efficient way
         if (!victory) {
-            movePlayer();
-            shooting();
+            if (canMove) {
+                movePlayer();
+            }
+            if (canShoot) {
+                shooting();
+            }
             checkHealth();
         }
     }
@@ -45,6 +53,7 @@ public class PlayerController : MonoBehaviour {
         this.reloadTime = reloadTime;
         this.bulletsUntilReload = bulletsUntilReload;
         this.bulletsShotsAtOnceWithAngle = bulletsShotsAtOnceWithAngle;
+        pickedUpWeapon = true;
     }
 
     public void setBulletSpriteAndScale(Sprite sprite, Vector2 bulletScale) {
@@ -107,7 +116,7 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    private void shootBullets(bool shootRight) {
+    public void shootBullets(bool shootRight) {
         if (shootingRate == 0) {
             return;
         }

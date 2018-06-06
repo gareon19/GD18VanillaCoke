@@ -12,9 +12,11 @@ public class GoalScript : MonoBehaviour {
     private Quaternion startRotation;
 
     void Start() {
-        ball = GameObject.FindGameObjectWithTag("Ball");
-        startPosition = ball.transform.position;
-        startRotation = ball.transform.rotation;
+        if (GameObject.FindGameObjectWithTag("Ball") != null) { 
+            ball = GameObject.FindGameObjectWithTag("Ball");
+            startPosition = ball.transform.position;
+            startRotation = ball.transform.rotation;
+        }
     }
 
 void OnCollisionEnter2D(Collision2D collObj)

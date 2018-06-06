@@ -11,7 +11,18 @@ public class MainMenu : MonoBehaviour {
         PlayerPrefs.DeleteAll();
 
         // loads the next scene
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("Player vs Player");
+    }
+
+    public void PlayTutorial()
+    {
+        // reset PlayerPrefs (scores)
+        PlayerPrefs.DeleteAll();
+
+        // loads the next scene
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("Tutorial");
     }
 
     public void QuitGame()
