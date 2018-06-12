@@ -10,6 +10,7 @@ TagManager:
   - Bullet
   - Ball
   - Weapon
+  - Sound
   layers:
   - Default
   - TransparentFX
