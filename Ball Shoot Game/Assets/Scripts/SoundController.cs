@@ -5,67 +5,59 @@ using UnityEngine.UI;
 
 [RequireComponent(typeof(AudioSource))]
 public class SoundController : MonoBehaviour {
-
-    private AudioSource musicAudio;
+    private AudioSource menuAudio;
     private AudioSource clickAudio;
-
+    
     public Slider musicSlider;
     public Slider clickSlider;
 
     public AudioClip menuSound;
     public AudioClip menuClickSound;
 
-    public AudioSource ClickAudio
-    {
-        get
-        {
-            return clickAudio;
-        }
-
-        set
-        {
-            clickAudio = value;
-        }
-    }
-
+    private bool isPlaying;
 
     void Start() {
-        DontDestroyOnLoad(this.gameObject);
 
+        AudioSource[] audios = GetComponents<AudioSource>();
 
-        musicAudio = GetComponent<AudioSource>();
+        menuAudio = audios[0];
+        menuAudio.loop = true;
+        menuAudio.clip = menuSound;
 
-        musicAudio.loop = true;
-        musicAudio.clip = menuSound;
-        musicAudio.Play();
+       // menuAudio.volume = musicSlider.value;
+        menuAudio.Play();
 
         // ToDo : Add sounds for clicks, damage, etc
-        clickAudio = GetComponent<AudioSource>();
+        clickAudio = audios[1];
+        clickAudio.clip = menuClickSound;
+        clickAudio.loop = false;
+
+       // clickAudio.volume = clickSlider.value;
 
     }
 
-
-    public void PlayMusic()
+    public void PlayMenuSound()
     {
-        if (musicAudio.isPlaying) return;
-        musicAudio.Play();
+        if (menuAudio.isPlaying) return;
+        menuAudio.Play();
     }
 
-    public void StopMusic()
+    public void PlayClickSound()
     {
-        musicAudio.Stop();
+        if (clickAudio.isPlaying) return;
+        clickAudio.Play();
     }
+
 
     public void setMusicVolume()
     {
-        musicAudio.volume = musicSlider.value;
+        menuAudio.volume = musicSlider.value;
     }
 
     public void setClickVolume()
     {
-        clickAudio.volume = musicSlider.value;
+        clickAudio.volume = clickSlider.value;
     }
-
 
 
 }

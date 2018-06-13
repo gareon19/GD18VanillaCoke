@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -109,7 +109,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 9887
+  controlID: 12
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 9888
+  controlID: 13
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 9889
+  controlID: 14
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -256,8 +256,8 @@ MonoBehaviour:
     y: 0
     width: 627
     height: 1317
-  m_MinSize: {x: 277, y: 71}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -372,7 +372,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: cc5bfeff2ea2ffff78c9ffffc0d0ffffc2d0ffff9efbffff000000001a2f00006e3000008e30000098300000a2300000a6300000b4300000
+    m_ExpandedIDs: 8c1cffff6c1fffff4a2affffde3bffffb83cffff2a65ffffea6bffffea75ffff727bffffd281ffffe28fffff6c99ffff32a5ffffc0ccffff3ccfffff2cd4ffff9efbffff00000000484500005c450000de4d0000364e0000fc4e0000144f00002a50000082500000ac520000c4520000e85300000e5b0000ac5b0000d65d00003e5e0000745e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -391,7 +391,7 @@ MonoBehaviour:
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
   m_ExpandedScenes:
-  - Menu
+  - Player vs Bot
   m_CurrenRootInstanceID: 0
   m_Locked: 0
   m_CurrentSortingName: TransformSorting
@@ -428,9 +428,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.11218916, y: -0.60664976, z: 90.11133}
+    m_Target: {x: -0.04492101, y: -0.5897089, z: 90.11252}
     speed: 2
-    m_Value: {x: -0.11218916, y: -0.60664976, z: 90.11133}
+    m_Value: {x: -0.04492101, y: -0.5897089, z: 90.11252}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -458,9 +458,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 10.9605465
+    m_Target: 10.85002
     speed: 2
-    m_Value: 10.9605465
+    m_Value: 10.85002
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -637,20 +637,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scripts
+    - Assets/_Scenes
   m_ViewMode: 1
   m_StartGridSize: 92
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/_Scenes
   m_LastFoldersGridSize: 92
   m_LastProjectPath: C:\Users\Flurin\Desktop\GameDesign\GD18VanillaCoke\Ball Shoot
     Game
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 062b0000
-    m_LastClickedID: 11014
-    m_ExpandedIDs: 000000007c280000d2290000b62a000000ca9a3bffffff7f
+    m_SelectedIDs: 28290000
+    m_LastClickedID: 10536
+    m_ExpandedIDs: 000000007c280000d6290000242a0000bc2a000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -678,7 +678,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000007c280000d2290000b62a000000ca9a3bffffff7f
+    m_ExpandedIDs: 000000007c280000d6290000bc2a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -705,7 +705,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: ce210000d021000064220000d8210000d6210000da210000dc21000018250000f6210000e0210000e82100003c24000042240000382400003a240000e624000006350000e8240000ea240000f024000010250000ee240000fe240000f2240000762b0000f4240000fa240000002500005a2500001a2500000e25000006250000202a0000662a00001028000000000000f6270000282e0000a22b0000a22c00003c2d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -756,9 +756,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 600
-    width: 1448
-    height: 418
+    y: 875
+    width: 1931
+    height: 513
   m_PersistentViewDataDictionary: {fileID: 0}
 --- !u!114 &20
 MonoBehaviour:
