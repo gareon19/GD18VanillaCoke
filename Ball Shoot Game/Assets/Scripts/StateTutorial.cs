@@ -32,6 +32,8 @@ public class StateTutorial : State<BotController>
 
     public override void EnterState(BotController _owner)
     {
+        tutorialShot = false;
+        enemySighted = false;
     }
 
     public override void ExitState(BotController _owner)
@@ -47,12 +49,15 @@ public class StateTutorial : State<BotController>
         }
         else if (!_owner.gotWeapon)
         {
+            Debug.Log("pick weapon");
             pickWeapon(_owner);
         }
         else if (!enemySighted) {
+            Debug.Log("got weapon");
             walkToEnemy(_owner);
         }
         else if (!tutorialShot) {
+            Debug.Log("warning shot");
             warningShot(_owner);
             _owner.startTutorial = false;
         }
@@ -71,6 +76,7 @@ public class StateTutorial : State<BotController>
     }
 
     private void walkToEnemy(BotController _owner) {
+        Debug.Log("Walking to enemy");
         Vector3 player_position = _owner.player1.transform.position;
 
         float distance = Mathf.Abs(_owner.transform.position.y - player_position.y);

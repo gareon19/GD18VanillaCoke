@@ -63,7 +63,7 @@ public class PauseScript : MonoBehaviour {
 
         Time.timeScale = 1f;
         GameIsPaused = false;
-        // hardcoded for now
+
         SceneManager.LoadScene("Menu");
     }
 }

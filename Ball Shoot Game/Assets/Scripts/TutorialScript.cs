@@ -116,6 +116,7 @@ public class TutorialScript : MonoBehaviour {
         arrow_player2_hp.SetActive(false);
         weapons_player2.SetActive(true);
 
+        Debug.Log("StartTutorial = true");
         botController.startTutorial = true;
 
         StartCoroutine(WaitForPlayerDamage());

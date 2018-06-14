@@ -33,6 +33,7 @@ public class BotController : MonoBehaviour {
     {
         if (collObj.gameObject.tag == "Weapon")
         {
+            Debug.Log("collided with weapon");
             gotWeapon = true;
         }
     }
