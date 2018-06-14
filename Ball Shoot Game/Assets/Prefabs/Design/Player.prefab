@@ -142,7 +142,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -191,6 +191,9 @@ MonoBehaviour:
   speed: 5
   bullet: {fileID: 1397020563764216, guid: ecfe29ecef90b6d4a988eba23f2fbe66, type: 2}
   bulletSpawn: {fileID: 1972261072952424}
+  canMove: 1
+  canShoot: 1
+  pickedUpWeapon: 0
   mainCanvas: {fileID: 0}
 --- !u!212 &212309685352123330
 SpriteRenderer:
