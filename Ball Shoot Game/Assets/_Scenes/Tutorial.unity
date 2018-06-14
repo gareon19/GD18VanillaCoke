@@ -3401,7 +3401,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4050699310250998, guid: 502e034f144efaf459763c38409ccd78, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.0004709661
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4050699310250998, guid: 502e034f144efaf459763c38409ccd78, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3427,36 +3427,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 4050699310250998, guid: 502e034f144efaf459763c38409ccd78, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1090395376280594, guid: 502e034f144efaf459763c38409ccd78, type: 2}
-      propertyPath: m_Name
-      value: Goal Left Player 1
-      objectReference: {fileID: 0}
     - target: {fileID: 114387166965148862, guid: 502e034f144efaf459763c38409ccd78,
         type: 2}
       propertyPath: PlayerController
       value: 
       objectReference: {fileID: 479347916}
-    - target: {fileID: 212327050206803816, guid: 95c84c1d416eac94baa4aadfb3be02c3,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 961a27bc23b8e9748a4977a109de216e,
-        type: 3}
-    - target: {fileID: 4363009775574270, guid: 95c84c1d416eac94baa4aadfb3be02c3, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4363009775574270, guid: 95c84c1d416eac94baa4aadfb3be02c3, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4363009775574270, guid: 95c84c1d416eac94baa4aadfb3be02c3, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
+    - target: {fileID: 1090395376280594, guid: 502e034f144efaf459763c38409ccd78, type: 2}
+      propertyPath: m_Name
+      value: Goal Left Player 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 502e034f144efaf459763c38409ccd78, type: 2}
@@ -3613,7 +3591,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4050699310250998, guid: 502e034f144efaf459763c38409ccd78, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.0004709661
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4050699310250998, guid: 502e034f144efaf459763c38409ccd78, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3639,25 +3617,15 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 4050699310250998, guid: 502e034f144efaf459763c38409ccd78, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1090395376280594, guid: 502e034f144efaf459763c38409ccd78, type: 2}
-      propertyPath: m_Name
-      value: Goal Right Player 2
-      objectReference: {fileID: 0}
     - target: {fileID: 114387166965148862, guid: 502e034f144efaf459763c38409ccd78,
         type: 2}
       propertyPath: PlayerController
       value: 
       objectReference: {fileID: 946824450}
-    - target: {fileID: 212995887684499784, guid: 502e034f144efaf459763c38409ccd78,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: f376cf7b0818a904abf9c8adc44430f1,
-        type: 3}
+    - target: {fileID: 1090395376280594, guid: 502e034f144efaf459763c38409ccd78, type: 2}
+      propertyPath: m_Name
+      value: Goal Right Player 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 502e034f144efaf459763c38409ccd78, type: 2}
   m_IsPrefabParent: 0
