@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 50947875165758380}
   - component: {fileID: 58924130824057776}
   - component: {fileID: 114120983858085164}
+  - component: {fileID: 95874287612895234}
   m_Layer: 0
   m_Name: Weapon 1
   m_TagString: Untagged
@@ -92,7 +93,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &58924130824057776
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -108,6 +109,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.5
+--- !u!95 &95874287612895234
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1981432140994858}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 801e5afda44461644b0dc7b8f66c6400, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114120983858085164
 MonoBehaviour:
   m_ObjectHideFlags: 1

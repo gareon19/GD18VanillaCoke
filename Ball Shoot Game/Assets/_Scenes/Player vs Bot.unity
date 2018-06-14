@@ -1550,6 +1550,11 @@ Prefab:
       propertyPath: m_TagString
       value: Weapon
       objectReference: {fileID: 0}
+    - target: {fileID: 95874287612895234, guid: 93265565b2d99e148b27865bfb4eb4bc,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 9ede1f4cfc8042f40abb4777571a9906, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93265565b2d99e148b27865bfb4eb4bc, type: 2}
   m_IsPrefabParent: 0
@@ -2398,6 +2403,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 95773891688176002, guid: b2f95bb13e7929d478f999314fbe0d9a,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 6a9b7666e89a3d646bb3d548ace7870e, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b2f95bb13e7929d478f999314fbe0d9a, type: 2}
   m_IsPrefabParent: 0
@@ -4578,6 +4588,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 95642922671380992, guid: ba60307a97f1f6e448218bceeabf8b86,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a25828c8c8775b14886c9f3ce4c264a0, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ba60307a97f1f6e448218bceeabf8b86, type: 2}
   m_IsPrefabParent: 0
