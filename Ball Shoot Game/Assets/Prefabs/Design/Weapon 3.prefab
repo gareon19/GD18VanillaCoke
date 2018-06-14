@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootingRate: 0.2
-  reloadTime: 0.8
+  reloadTime: 0.6
   bulletsUntilReload: 2
   bulletsShotsAtOnceWithAngle:
   - 0
